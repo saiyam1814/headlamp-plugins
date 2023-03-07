@@ -1,6 +1,6 @@
 initContainers:
   - name: "headlamp-plugins"
-    image: saiyam911/headlamp-plugins:latest
+    image: saiyam911/headlamp:sha-4703068
     imagePullPolicy: Always
     command: ["/bin/sh", "-c", "mkdir -p /build/plugins && cp -r /plugins/* /build/plugins/"]
     volumeMounts:
@@ -10,7 +10,7 @@ initContainers:
 persistentVolumeClaim:
   enabled: true
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   size: 1Gi
 
 volumeMounts:
